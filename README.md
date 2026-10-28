@@ -111,11 +111,12 @@ del juego:
 Instala Pokémon Reloaded R36S desde este repositorio:
 https://github.com/Kuranesx/pokemon-reloaded-r36s
 
-La consola está en 10.110.228.241, usuario ark, con la clave SSH que ya tengo configurada.
-1. Descarga el release pokemonreloaded.zip y descomprímelo en /roms2/ports/.
+La consola está en <IP>, usuario ark, con la clave SSH que ya tengo configurada.
+1. Clona este repositorio o descarga el release pokemonreloaded.zip y descomprímelo
+   en /roms2/ports/.
 2. Usa el zip oficial de Pokémon Reloaded 1.9.2.2 que te indico.
-3. Ejecuta tools/install-game.sh para copiar data/ y el .exe dentro de
-   /roms2/ports/pokemonreloaded/.
+3. Desde el repositorio, ejecuta bash tools/install-game.sh para copiar data/ y el
+   .exe dentro de /roms2/ports/pokemonreloaded/.
 4. Verifica que data/ y el .exe estén junto a gm8emulator; no borres assets/ ni los scripts.
 5. Da permisos de ejecución a gm8emulator y a los .sh.
 6. Si hay un servidor X/GDM activo, deténlo antes de lanzar el juego KMSDRM.
@@ -126,7 +127,7 @@ No subas data/ ni el .exe a GitHub: son del autor original.
 El instalador también se puede usar a mano:
 
 ```bash
-./tools/install-game.sh "/ruta/Proyecto Reloaded The Last Beta 1.9.2.2 Full.zip" \
+bash tools/install-game.sh "/ruta/Proyecto Reloaded The Last Beta 1.9.2.2 Full.zip" \
   /roms2/ports/pokemonreloaded
 ```
 

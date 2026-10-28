@@ -43,7 +43,7 @@ if [ "$manual" = 0 ]; then
     pm_platform_helper "$GAMEDIR/gm8emulator"
 fi
 
-"$GAMEDIR/run.sh"
+bash "$GAMEDIR/run.sh"
 status=$?
 
 if [ "$manual" = 0 ]; then

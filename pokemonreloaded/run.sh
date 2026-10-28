@@ -23,10 +23,10 @@ export SDL_GAMECONTROLLERCONFIG_FILE="$GAMEDIR/gamecontrollerdb.txt"
 export GM8_SAVE_BACKUP_DIR="${GM8_SAVE_BACKUP_DIR:-$GAMEDIR/saves-backup}"
 
 chmod +x "$GAMEDIR/gm8emulator" 2>/dev/null || true
-"$GAMEDIR/backup_saves.sh" 2>/dev/null || true
+bash "$GAMEDIR/backup_saves.sh" 2>/dev/null || true
 
 "$GAMEDIR/gm8emulator" "$GAME_EXE" >"$GAMEDIR/log.txt" 2>&1
 status=$?
 
-"$GAMEDIR/backup_saves.sh" 2>/dev/null || true
+bash "$GAMEDIR/backup_saves.sh" 2>/dev/null || true
 exit "$status"
