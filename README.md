@@ -158,9 +158,9 @@ general. Si quieres ayudar a corregirlo, el código y las instrucciones de compi
 ## PortMaster
 
 El paquete sigue el formato de PortMaster (`port.json`, `Pokemon Reloaded.sh`, `screenshot.png`,
-`gameinfo.xml`, `README.md`). Está preparado para enviarse a
-[PortMaster-New](https://github.com/PortsMaster/PortMaster-New). Hasta que el PR sea aceptado,
-usa el zip de **Releases** o el instalador manual.
+`gameinfo.xml`, `README.md`). PR abierto en
+[PortMaster-New #2821](https://github.com/PortsMaster/PortMaster-New/pull/2821). Hasta que sea
+aceptado, usa el zip de **Releases** o el instalador manual.
 
 ## Licencias y código fuente
 
