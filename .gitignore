@@ -1,0 +1,12 @@
+*.exe
+*.sav
+*.savc
+*.srm
+*.nfo
+data/
+saves-backup/
+log.txt
+portmaster/
+__pycache__/
+
+/pokemonreloaded.zip
