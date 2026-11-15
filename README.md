@@ -8,9 +8,10 @@ emulado: ejecuta el `reloaded.exe` original sobre un motor nativo en Rust y SDL2
 
 Probado en una R36S con ArkOS 09292023, OpenGL ES 3.2 (Mali-G31) y pantalla de 640x480.
 
-Esta es la build **centrada** (`gm8emulator_centered`), elegida por estabilidad. En algunos combates
-el borde derecho puede quedar recortado y el nivel del rival puede no verse completo; es la build
-que mejor funciona por ahora. El fallo está documentado abajo.
+Esta es la build **centrada** (`gm8emulator_centered`), elegida por estabilidad, con remapeo de
+controles para un jugador. En algunos combates el borde derecho puede quedar recortado y el nivel
+del rival puede no verse completo; es la build que mejor funciona por ahora. El fallo está
+documentado abajo.
 
 ## Créditos
 
@@ -28,7 +29,7 @@ que mejor funciona por ahora. El fallo está documentado abajo.
 ## Qué incluye este port
 
 - `pokemonreloaded/gm8emulator`: motor OpenGMK compilado para `aarch64` (build centrada,
-  md5 `a4a026902dfc4f4584670759791d73c9`).
+  md5 `8901496bc0be9246987099403094328c`, con remapeo de controles para un jugador).
 - `pokemonreloaded/assets`: recursos propios de OpenGMK (no son assets del juego).
 - `pokemonreloaded/gamecontrollerdb.txt`: mapeo del mando de la R36S.
 - Scripts de arranque, backups de partidas y licencias.
@@ -133,9 +134,49 @@ bash tools/install-game.sh "/ruta/Proyecto Reloaded The Last Beta 1.9.2.2 Full.z
 
 ## Controles
 
-El juego lee el mando por SDL. En la R36S se usa el mapeo de `gamecontrollerdb.txt`; los botones
-principales funcionan como A/B/X/Y, la cruceta y el stick izquierdo para mover, y Start/Select para
-los menús. Si tu mando no responde, revisa que esté en modo mando y no en modo teclado.
+El juego solo lee teclado; `ramen` traduce el mando SDL a las teclas de Pokémon Reloaded. Este es
+el mapeo de la build para R36S:
+
+| R36S | Tecla | Función |
+|---|---|---|
+| A (derecha) | `Z` | Confirmar/acción; ataque 1 |
+| B (abajo) | `X` | Cancelar; ataque 2; correr en el mapa |
+| X (arriba) | `C` | Ataque 3; pescar |
+| Y (izquierda) | `S` | Cambiar al siguiente Pokémon |
+| L1 | `V` | **Ataque 4**; bici; baya en Zona Safari |
+| R1 | `B` | **Lanzar Poké Ball/Safari Ball**; sacar Pokémon |
+| L3 (clic stick izq.) | `Espacio` | Menú Pokémon |
+| R3 (clic stick der.) | `N` | Menú Usar Objetos |
+| L2 | `M` | Mega Evolución; mapa |
+| R2 | `O` | Mochila |
+| Cruceta / stick izq. | Flechas | Mover; navegar menús |
+| Start | `Enter` | Menús / aceptar |
+| Select | — | Modificador: mantener y pulsar otra tecla |
+| Select + Start | — | Salir del juego |
+
+### Capa Select
+
+Mantén **Select** y pulsa:
+
+| Combinación | Tecla | Función |
+|---|---|---|
+| Select + A | `1` | Pokémon 1 / MO1 |
+| Select + B | `2` | Pokémon 2 / MO2 |
+| Select + X | `3` | Pokémon 3 / MO3 |
+| Select + Y | `4` | Pokémon 4 / MO4 |
+| Select + L1 | `5` | Pokémon 5 / MO5 |
+| Select + R1 | `6` | Pokémon 6 / MO6 |
+| Select + Arriba | `7` | MO7 / Buceo |
+| Select + Abajo | `8` | Menú de habilidades externas |
+| Select + Izquierda | `9` | Menú xPod |
+| Select + Derecha | `0` | Menú de comandos |
+| Select + L3 | `A` | Usar objeto asignado; andar |
+| Select + R3 | `E` | Huir / escapar |
+| Select + L2 | `F` | Flauta Pokémon |
+| Select + R2 | `D` | Cancelar cambio de Pokémon; guardar decoración |
+
+Los botones 1–6 cambian directamente de Pokémon en combate; no hace falta abrir el menú.
+La cruceta y el stick izquierdo siguen moviendo al Pokémon durante el combate.
 
 ## Guardado y backups
 

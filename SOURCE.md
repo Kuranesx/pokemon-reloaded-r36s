@@ -20,7 +20,9 @@ cargo build --release -p gm8emulator --bin gm8emulator \
   --target aarch64-unknown-linux-gnu
 ```
 
-The centred build is the one published in this repository
-(md5 `a4a026902dfc4f4584670759791d73c9`). The later `rightalign` experiment is not published.
+The centred build is the one published in this repository (md5
+`8901496bc0be9246987099403094328c`). The later `rightalign` experiment is not published. This
+build also includes the single-player controller remap (attack 4, capture and direct Pokémon
+switching) in `vendor/ramen/src/platform/sdl.rs`.
 
 If you redistribute the binary, comply with GPL-2.0 and make the corresponding source available.

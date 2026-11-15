@@ -3,7 +3,7 @@
 	<game>
 		<path>./Pokemon Reloaded.sh</path>
 		<name>Pokémon Reloaded</name>
-		<desc>Pokémon Reloaded The Last Beta 1.9.2.2 running natively on OpenGMK. Explore the Star region, catch Pokémon and battle in this long-running Spanish fan game. Game files are not included; download them from the official F3R blog.</desc>
+		<desc>Pokémon Reloaded The Last Beta 1.9.2.2 running natively on OpenGMK. Explore the Star region, catch Pokémon and battle in this long-running Spanish fan game. Single-player controls: L1 attack 4, R1 capture, Select+face buttons switch Pokémon. Game files are not included; download them from the official F3R blog.</desc>
 		<image>./pokemonreloaded/cover.png</image>
 		<releasedate>20260802</releasedate>
 		<developer>F3R Productions</developer>
